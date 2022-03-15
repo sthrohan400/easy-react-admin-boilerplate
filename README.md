@@ -9,10 +9,10 @@ npm version 8.1.2+
 1. Clone the repository - https://github.com/sthrohan400/easy-react-admin-boilerplate.git
 2. Install dependencies: `npm i`
 4. Execute:
-   2. Build : `npm run build`
-   3. Run: `npm run start`
-   4. Lint: `npm run lint`
-   5. Prettify: `npm run prettify` - Change the code structure based on prettier.json config
+   - Build : `npm run build`
+   - Run: `npm run start`
+   - Lint: `npm run lint`
+   - Prettify: `npm run prettify` - Change the code structure based on prettier.json config
 5. Verify Application using: http://localhost:3000
 
 ## How to ?
