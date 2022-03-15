@@ -1,0 +1,42 @@
+.App {
+    text-align: left;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+.setting-header-span {
+    float: right;
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    span {
+        margin-right: 12px;
+    }
+}
+
+/** Ag grid Data table CSS External **/
+.ag-header {
+    background: @table-header-background !important;
+    border: none !important;
+}
+/** Datatable CSS **/
+.datatable-filter-component {
+    background: @table-header-background;
+    display: block;
+    box-sizing: content-box;
+    padding: 20px;
+    
+    .dynamic-filter-item {
+        min-width: 180px;
+        max-width: 20%;
+    }
+}
+
+.remove-icon {
+    color: @error-color;
+}

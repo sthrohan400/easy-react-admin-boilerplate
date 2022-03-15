@@ -1,0 +1,27 @@
+{
+    "appName": "Easy PS",
+    "activeLang": "en",
+    "activeTheme": "light",
+    "languages": [
+        {
+            "label": "EN",
+            "value": "en"
+        },
+        {
+            "label": "ZH",
+            "value": "zh"
+        }
+    ],
+    "themes": [
+        {
+            "label": "Light",
+            "value": "light"
+        },
+        {
+            "label": "Dark",
+            "value": "dark"
+        }
+    ],
+    "region": "hongkong",
+    "pullTime": "2022-03-07"
+}
