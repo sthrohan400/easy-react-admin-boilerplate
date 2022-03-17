@@ -16,7 +16,8 @@ import { ThemeSettingProvider } from "provider/ThemeProvider";
 import "assets/less/admin/theme-light/index.less";
 import "assets/less/admin/theme-dark/index.less";
 import LanguageSelect from "components/LanguageSelect";
-import { LanguageSettingProvider } from "provider/LanguageProvider";
+// import { LanguageSettingProvider } from "provider/LanguageProvider";
+import { TranslationSettingProvider } from "provider/TranslationProvider";
 import { useSelector } from "react-redux";
 
 const { Header, Sider, Content } = Layout;
@@ -44,51 +45,58 @@ function AdminLayout() {
 
     return (
         <>
-            <Layout className="default-admin-layout">
-                <Sider trigger={null} collapsible collapsed={collapsed}>
-                    <div className="logo" />
-                    <SideBarMenu routes={adminRoutes} mode="inline" defaultSelectedKeys={["1"]} />
-                </Sider>
-                <Layout className="site-layout">
-                    <Header className="site-layout-background" style={{ padding: 0 }}>
-                        {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                            className: "trigger",
-                            onClick: toggle
-                        })}
-                        <span className="setting-header-span">
-                            <SettingFilled onClick={toggleDrawer} className="setting-icon" />
-                            <LogoutOutlined />
-                        </span>
-                    </Header>
-                    <Content
-                        className="site-layout-background"
-                        style={{
-                            margin: "24px 16px",
-                            padding: 24,
-                            minHeight: 280
-                        }}>
-                        <Outlet />
-                    </Content>
-                </Layout>
-                <Drawer onClose={toggleDrawer} visible={drawerVisible}>
-                    <Divider />
-                    <Row>
-                        <LanguageSettingProvider>
+            <TranslationSettingProvider>
+                <Layout className="default-admin-layout">
+                    <Sider trigger={null} collapsible collapsed={collapsed}>
+                        <div className="logo" />
+                        <SideBarMenu
+                            routes={adminRoutes}
+                            mode="inline"
+                            defaultSelectedKeys={["1"]}
+                        />
+                    </Sider>
+                    <Layout className="site-layout">
+                        <Header className="site-layout-background" style={{ padding: 0 }}>
+                            {React.createElement(
+                                collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+                                {
+                                    className: "trigger",
+                                    onClick: toggle
+                                }
+                            )}
+                            <span className="setting-header-span">
+                                <SettingFilled onClick={toggleDrawer} className="setting-icon" />
+                                <LogoutOutlined />
+                            </span>
+                        </Header>
+                        <Content
+                            className="site-layout-background"
+                            style={{
+                                margin: "24px 16px",
+                                padding: 24,
+                                minHeight: 280
+                            }}>
+                            <Outlet />
+                        </Content>
+                    </Layout>
+                    <Drawer onClose={toggleDrawer} visible={drawerVisible}>
+                        <Divider />
+                        <Row>
                             <LanguageSelect
                                 style={{ float: "right", minWidth: "100" }}
                                 options={languages}
                             />
-                        </LanguageSettingProvider>
-                    </Row>
-                    <Divider />
-                    <Row>
-                        <ThemeSettingProvider>
-                            <ThemeSelect options={themes} />
-                        </ThemeSettingProvider>
-                    </Row>
-                    <Divider />
-                </Drawer>
-            </Layout>
+                        </Row>
+                        <Divider />
+                        <Row>
+                            <ThemeSettingProvider>
+                                <ThemeSelect options={themes} />
+                            </ThemeSettingProvider>
+                        </Row>
+                        <Divider />
+                    </Drawer>
+                </Layout>
+            </TranslationSettingProvider>
         </>
     );
 }

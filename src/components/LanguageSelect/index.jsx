@@ -1,6 +1,6 @@
 import React from "react";
 import { Select } from "antd";
-import { LanguageContext } from "provider/LanguageProvider";
+import { TranslationContext } from "provider/TranslationProvider";
 
 /**
  * TODO maket it better
@@ -8,10 +8,10 @@ import { LanguageContext } from "provider/LanguageProvider";
  * @returns
  */
 function LanguageSelect({ ...config }) {
-    const languageContext = React.useContext(LanguageContext);
+    const translationContext = React.useContext(TranslationContext);
 
     const changeLanguage = (value) => {
-        languageContext.dispatch({ type: "CHANGE_LANGUAGE", payload: value });
+        translationContext.dispatch({ type: "CHANGE_LANGUAGE", payload: value });
     };
 
     let { options, ...configuration } = { ...config };
@@ -19,7 +19,7 @@ function LanguageSelect({ ...config }) {
     return (
         <Select
             {...configuration}
-            defaultValue={languageContext.state.defaultLang}
+            defaultValue={translationContext.state.defaultLang}
             options={options}
             onChange={changeLanguage}
         />
