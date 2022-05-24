@@ -14,6 +14,8 @@ npm version 8.1.2+
    - Lint: `npm run lint`
    - Prettify: `npm run prettify` - Change the code structure based on prettier.json config
 5. Verify Application using: http://localhost:3000
+   - Dashboard Link: http://localhost:3000/#/admin/dashboard
+   - Login page Link: http://localhost:3000/#/app/login
 
 ## How to ?
 ### Add Routes
