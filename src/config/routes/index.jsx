@@ -19,7 +19,7 @@ const defaultRoutes = [
     },
     {
         path: "*",
-        element: <FourOFourPage />
+        element: <Navigate to="/app/login" />
     }
 ];
 

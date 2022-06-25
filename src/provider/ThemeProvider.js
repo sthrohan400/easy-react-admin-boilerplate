@@ -2,9 +2,6 @@ import React from "react";
 
 export const ThemeContext = React.createContext();
 
-/** TODO:: Add default theme based on configuration */
-const initialTheme = { theme: localStorage.getItem("theme") || "light" };
-
 const themeReducer = (state, action) => {
     switch (action.type) {
         case "light":
@@ -26,6 +23,8 @@ const themeReducer = (state, action) => {
 };
 
 export function ThemeSettingProvider(props) {
+    /** TODO:: Add default theme based on configuration */
+    const initialTheme = { theme: localStorage.getItem("theme") || "light" };
     const [state, dispatch] = React.useReducer(themeReducer, initialTheme);
     return (
         <ThemeContext.Provider value={{ state: state, dispatch: dispatch }}>

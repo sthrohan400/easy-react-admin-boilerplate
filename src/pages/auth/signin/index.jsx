@@ -19,18 +19,17 @@ function SignInPage() {
                 <Col span={12} className="dl-brand-container"></Col>
                 <Col span={12}>
                     <Card style={{ height: "100%" }}>
-                        <Row>
-                            <div style={{ width: "100%" }}>
-                                <Row>
-                                    <LanguageSelect
-                                        style={{ float: "right", minWidth: "100" }}
-                                        options={languages}
-                                    />
-                                </Row>
-                            </div>
+                        <Row style={{ float: "right" }}>
+                            <LanguageSelect
+                                style={{
+                                    minWidth: "100",
+                                    marginLeft: "20"
+                                }}
+                                options={languages}
+                            />
                         </Row>
 
-                        <Row>
+                        <Row style={{ width: "100%" }}>
                             <div>
                                 <h2> {t("signin")} </h2>
                             </div>

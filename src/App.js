@@ -3,13 +3,12 @@ import RoutesConfiguration from "config/routes";
 import "config/i18n";
 
 import { useDispatch } from "react-redux";
-import { initApp } from "slices/app";
+import { appInit } from "slices/app";
 
 function App() {
     const dispatch = useDispatch();
-
     useEffect(() => {
-        dispatch(initApp());
+        dispatch(appInit());
     }, []);
 
     return (
